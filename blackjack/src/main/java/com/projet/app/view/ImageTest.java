@@ -5,6 +5,8 @@ import java.io.InputStream;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 public class ImageTest extends JPanel {
@@ -13,22 +15,30 @@ public class ImageTest extends JPanel {
 
   public ImageTest() {
     try {
-      InputStream fichierImage = getClass().getResourceAsStream("/images/carte.png");
+      InputStream fichierImage = getClass().getResourceAsStream("../ressources/images/cards.jpg");
       if (fichierImage == null) {
         throw new Exception("Image non trouvée");
       }
       image = ImageIO.read(fichierImage);
 
-      int largeurCarte = 95;
-      int hauteurCarte = 135;
-      int ligne = 6;
-      int colonne = 3;
-      carte = image.getSubimage(colonne * (largeurCarte + 34) + 35,
-          ligne * (hauteurCarte + 35) + 35,
+      int largeurCarte = 62;
+      int hauteurCarte = 92;
+      int ligne = 3;
+      int colonne = 0;
+      carte = image.getSubimage(colonne * (largeurCarte + 7) + 18,
+          ligne * (hauteurCarte + 6) + 17,
           largeurCarte, hauteurCarte);
 
     } catch (Exception err) {
       System.out.println(err.getMessage());
+    }
+  }
+
+  @Override
+  protected void paintComponent(Graphics g) {
+    super.paintComponent(g);
+    if (carte != null) {
+      g.drawImage(carte, 50, 50, null);
     }
   }
 
