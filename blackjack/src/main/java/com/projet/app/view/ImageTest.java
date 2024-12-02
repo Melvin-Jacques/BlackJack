@@ -1,4 +1,4 @@
-package com.projet.app;
+package com.projet.app.view;
 
 import java.io.InputStream;
 
