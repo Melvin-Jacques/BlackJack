@@ -1,53 +1,38 @@
 package com.projet.app.controller;
 
+import com.projet.app.model.Deck;
+import com.projet.app.model.Player;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-  private List<String> deck;
-  private List<String> playerHand;
-  private List<String> dealerHand;
+  private Deck deck;
+  private Player player;
+  private Player dealer;
 
   public Game() {
-    deck = new ArrayList<>();
-    playerHand = new ArrayList<>();
-    dealerHand = new ArrayList<>();
-
+    deck = new Deck();
+    player = new Player("Player");
+    dealer = new Player("Dealer");
   }
 
-  private void initializeDeck() {
-    String[] colors = {"Hearts", "Diamonds", "Clubs", "Spades"};
-    String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-
-    for (String color : colors) {
-      for (String rank : ranks) {
-        deck.add(rank + "of" + color);
-      }
-    }
-
-    
+  public void startGame() {
+    player.addCard(deck.drawCard());
+    dealer.addCard(deck.drawCard());
+    player.addCard(deck.drawCard());
+    dealer.addCard(deck.drawCard());
   }
 
-  public String drawCard() {
-    return deck.isEmpty() ? null : deck.remove(0);
+  public Player getPlayer() {
+    return player;
   }
 
-  public void dealCard() {
-    playerHand.add(drawCard());
-    dealerHand.add(drawCard());
-    playerHand.add(drawCard());
-    dealerHand.add(drawCard());
+  public Player getDealer() {
+    return dealer;
   }
 
-  public List<String> getPlayerHand() {
-    return playerHand;
-  }
-
-  public List<String> getDealerHand() {
-    return dealerHand;
-  }
-
-  public int calculScore(List<String> hand) {
-    int score = 0;
+  public Deck getDeck() {
+    return deck;
   }
 }
