@@ -11,9 +11,9 @@ import java.awt.image.BufferedImage;
 
 public class ImageTest extends JPanel {
   private BufferedImage image;
-  private BufferedImage carte;
+  private BufferedImage cards;
 
-  public ImageTest() {
+  public ImageTest(int column, int row) {
     try {
       InputStream fichierImage = getClass().getResourceAsStream("../ressources/images/cards.jpg");
       if (fichierImage == null) {
@@ -23,10 +23,9 @@ public class ImageTest extends JPanel {
 
       int largeurCarte = 62;
       int hauteurCarte = 92;
-      int ligne = 3;
-      int colonne = 0;
-      carte = image.getSubimage(colonne * (largeurCarte + 7) + 18,
-          ligne * (hauteurCarte + 6) + 17,
+      
+      cards = image.getSubimage(column * (largeurCarte + 7) + 18,
+          row * (hauteurCarte + 6) + 17,
           largeurCarte, hauteurCarte);
 
     } catch (Exception err) {
@@ -37,17 +36,23 @@ public class ImageTest extends JPanel {
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
-    if (carte != null) {
-      g.drawImage(carte, 50, 50, null);
+    if (cards != null) {
+      g.drawImage(cards, 62, 92, null);
     }
   }
 
-  public static void main(String[] args) {
-    JFrame f = new JFrame("Carte à jouer");
-    ImageTest panelImage = new ImageTest();
-    f.add(panelImage);
-    f.setSize(200, 300);
-    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    f.setVisible(true);
+  //<-> 0-13; ↕ 0-3
+  public static Integer cardValues(int col, int lig) {
+    int value;
+    if (col <= 9) {
+      value = col;
+    } else {
+      value = 10;
+    }
+
+    if (col == 13) {
+      value = 1;
+    }
+    return value;
   }
 }
