@@ -3,7 +3,6 @@ package com.projet.app.view;
 import java.io.InputStream;
 
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.Graphics;
