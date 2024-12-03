@@ -3,9 +3,6 @@ package com.projet.app.controller;
 import com.projet.app.model.Deck;
 import com.projet.app.model.Player;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Game {
   private Deck deck;
   private Player player;
