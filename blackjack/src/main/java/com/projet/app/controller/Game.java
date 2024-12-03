@@ -24,8 +24,6 @@ public class Game {
         deck.add(rank + "of" + color);
       }
     }
-
-    
   }
 
   public String drawCard() {
