@@ -3,25 +3,34 @@ package com.projet.app.view;
 import javax.swing.*;
 import java.awt.*;
 
-public class ActionPanel extends JPanel {
+public class ActionPanel extends JComponent {
   public ActionPanel(CardLayout layout, GamePanel gamePanel, JPanel mainPanel) {
-    JFrame frame = new JFrame();
-    Dimension buttonSize = new Dimension(100, 25);
-    
-    JButton btn1 = new JButton("Hit");
-    JButton btn2 = new JButton("Stand");
-    JButton btn3 = new JButton("Double Down");
-        
-    frame.add(btn1);
-    frame.add(btn2);
-    frame.add(btn3);
+      //je veux afficher 3 bouton en ligne separé par un petit espace pour ensuite mettre ce panel dans gamepanel
+      //avec un flow layout
+      setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+      JButton hit = new JButton("Hit");
+      JButton stand = new JButton("Stand");
+      JButton doubleDown = new JButton("Double");
 
-    frame.setLayout(new FlowLayout(FlowLayout.CENTER));
-    
-    btn1.setPreferredSize(buttonSize);
-    btn2.setPreferredSize(buttonSize);
-    btn3.setPreferredSize(buttonSize);
-    frame.setSize(300,300);
-    frame.setVisible(true);
+      hit.addActionListener(e -> {
+          //gamePanel.hit();
+          layout.show(mainPanel, "game");
+      });
+      
+      stand.addActionListener(e -> {
+          //gamePanel.stand();
+          layout.show(mainPanel, "game");
+      });
+
+      doubleDown.addActionListener(e -> {
+          //gamePanel.doubleDown();
+          layout.show(mainPanel, "game");
+      });
+
+      add(hit);
+      add(stand);
+      add(doubleDown);
+
+      setPreferredSize(new Dimension(100, 100));
   }
 }
