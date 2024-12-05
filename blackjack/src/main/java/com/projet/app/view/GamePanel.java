@@ -8,15 +8,16 @@ public class GamePanel extends JPanel {
   
   public GamePanel(CardLayout layout, JPanel mainPanel) {
     ActionPanel actionPanel = new ActionPanel(layout, this, mainPanel);
+    ImageTest cardImage = new ImageTest(0, 0);
+    cardImage.setBackground(Color.BLACK);
     
     setLayout(new BorderLayout());
 
-    JPanel game = new JPanel();
     JLabel label = new JLabel("Game Panel");
-    // game.setLayout(new BoxLayout(game, BoxLayout.X_AXIS));
-    
+
+    add(cardImage, BorderLayout.CENTER);
+    add(cardImage);
     add(label, BorderLayout.NORTH);
-    add(game, BorderLayout.CENTER);
     add(actionPanel, BorderLayout.SOUTH);
   }
 }

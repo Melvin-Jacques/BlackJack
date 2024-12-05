@@ -39,19 +39,4 @@ public class ImageTest extends JPanel {
       g.drawImage(cards, 62, 92, null);
     }
   }
-
-  //<-> 0-13; ↕ 0-3
-  public static Integer cardValues(int col, int lig) {
-    int value;
-    if (col <= 9) {
-      value = col;
-    } else {
-      value = 10;
-    }
-
-    if (col == 13) {
-      value = 1;
-    }
-    return value;
-  }
 }
