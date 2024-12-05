@@ -13,11 +13,10 @@ public class GamePanel extends JPanel {
 
     JPanel game = new JPanel();
     JLabel label = new JLabel("Game Panel");
-    game.setLayout(new BoxLayout(game, BoxLayout.Y_AXIS));
-    game.add(actionPanel);
+    // game.setLayout(new BoxLayout(game, BoxLayout.X_AXIS));
     
-
     add(label, BorderLayout.NORTH);
     add(game, BorderLayout.CENTER);
+    add(actionPanel, BorderLayout.SOUTH);
   }
 }

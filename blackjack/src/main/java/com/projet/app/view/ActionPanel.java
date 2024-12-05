@@ -27,9 +27,32 @@ public class ActionPanel extends JComponent {
           layout.show(mainPanel, "game");
       });
 
+      JLabel gains = new JLabel("Gains");
+      int value = 1000;
+      JLabel gainNumber = new JLabel(String.valueOf(value));
+      gainNumber.setBackground(Color.darkGray);
+
+      JLabel total = new JLabel("Total");
+      JLabel totalNumber = new JLabel(String.valueOf(value));
+      totalNumber.setBackground(Color.darkGray);
+
+      JLabel balance = new JLabel("Balance");
+      JLabel balanceNumber = new JLabel(String.valueOf(value));
+    //   balanceNumber.setOpaque(true);
+    //   balanceNumber.setBackground(Color.GREEN);
+
+      add(balance);
+      add(balanceNumber);
+
       add(hit);
       add(stand);
       add(doubleDown);
+
+      add(total);
+      add(totalNumber);
+
+      add(gains);
+      add(gainNumber);
 
       setPreferredSize(new Dimension(100, 100));
   }
