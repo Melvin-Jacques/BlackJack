@@ -3,9 +3,8 @@ package com.projet.app;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.smartcardio.Card;
-
 import com.projet.app.controller.Game;
+import com.projet.app.model.*;
 import com.projet.app.view.MainFrame;
 
 public class App {
