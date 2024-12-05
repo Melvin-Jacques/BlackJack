@@ -20,20 +20,36 @@ public class App {
       System.out.println("Dealer's cards");
       hand(game.getDealer().getHand());
       System.out.println("Value of dealer's card : " + game.getDealer().calculScore());
-      System.out.println("Do you want to hit (1) or stand (2)");
 
-      int choice = scanner.nextInt();
 
-      if (choice == 1) {
-        game.playerHit();
-        System.out.println("Vous avez tiré : " + game.getPlayer().getHand().get(game.getPlayer().getHand().size() - 1));
-        System.out.println("Vos cartes :");
-        hand(game.getPlayer().getHand());
-        System.out.println("Score du joueur : " + game.getPlayer().calculScore());
+      boolean playerTurn = true;
 
-      } else {
-        System.out.println("Choix invalide. Veuillez choisir 1 (Hit) ou 2 (Stand).");
-      }
+
+      while (playerTurn) {
+        System.out.println("1: Hit, 2: Stand");
+        int choice = scanner.nextInt();
+
+        if (choice == 1) {
+            game.playerHit();
+            System.out.println("You hit : " + game.getPlayer().getHand().get(game.getPlayer().getHand().size() - 1));
+            System.out.println("Your hand :");
+            hand(game.getPlayer().getHand());
+            System.out.println("Player score " + game.getPlayer().calculScore());
+
+            if (game.getPlayer().isBust()) {
+                System.out.println("You have more than 21, you bust");
+                return;
+            }
+        
+        } else if (choice == 2){
+          playerTurn = false;
+        } else {
+            System.out.println("Error, choose 1 (Hit) or 2 (Stand).");
+        }
+    }
+
+    System.out.println("------------------------");
+    System.out.println(game.getWinner());
 
     }
 
