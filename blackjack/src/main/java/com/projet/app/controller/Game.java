@@ -25,6 +25,12 @@ public class Game {
     player.addCard(deck.drawCard());
   }
 
+  public void dealerPlay() {
+    while (dealer.calculScore() < 17) {
+      dealer.addCard(deck.drawCard());
+    }
+  }
+
   public String getWinner() {
     if(player.isBust()) {
       return "Dealer win";

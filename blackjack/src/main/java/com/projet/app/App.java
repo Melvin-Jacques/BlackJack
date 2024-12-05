@@ -48,6 +48,13 @@ public class App {
         }
     }
 
+    System.out.println("Dealer turn : ");
+    game.dealerPlay();
+
+    System.out.println("Dealer cards : ");
+    hand(game.getDealer().getHand());
+    System.out.println("Dealer score " + game.getDealer().calculScore());
+
     System.out.println("------------------------");
     System.out.println(game.getWinner());
 
