@@ -20,6 +20,18 @@ public class Player {
       return hand;
     }
 
+    public int token(int protefeuilIntitial) {
+      int protefeuilFinal = 0;
+ 
+      if ( protefeuilIntitial < protefeuilFinal) {
+        protefeuilIntitial = protefeuilFinal - protefeuilIntitial;
+      }
+      else {
+        protefeuilIntitial = protefeuilFinal + protefeuilIntitial;
+      }
+      return protefeuilIntitial;
+    }
+
     public int calculScore() {
       int score = 0;
       int ace = 0;
