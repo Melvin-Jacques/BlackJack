@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10f10b60-69e5-48bc-bf0e-7d2076d8f794" name="Changes" comment="Just for add">
-      <change beforePath="$PROJECT_DIR$/blackjack/src/main/java/com/projet/app/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/blackjack/src/main/java/com/projet/app/controller/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blackjack/target/classes/com/projet/app/controller/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/blackjack/target/classes/com/projet/app/controller/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,18 @@
     </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ange-tec"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Melvin-Jacques/BlackJack.git",
+    "accountId": "b278c974-cc6a-4e8c-b3f2-4b36e8f5c1c2"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -45,7 +56,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/asus/biblio",
+    "last_opened_file_path": "C:/Users/asus/IdeaProjects/BlackJack",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,6 +65,19 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="BlackJack" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BlackJack" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -74,6 +98,7 @@
       <workItem from="1733232767296" duration="1090000" />
       <workItem from="1733233884428" duration="71000" />
       <workItem from="1733234027718" duration="60000" />
+      <workItem from="1733388833639" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="Just for add">
       <option name="closed" value="true" />
