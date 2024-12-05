@@ -25,6 +25,20 @@ public class Game {
     player.addCard(deck.drawCard());
   }
 
+  public String getWinner() {
+    if(player.isBust()) {
+      return "Dealer win";
+    } else if(dealer.isBust()) {
+      return "Player win";
+    } else if(player.calculScore() > dealer.calculScore()) {
+      return "Player win";
+    } else if (dealer.calculScore() > player.calculScore()) {
+      return "Dealer win";
+    } else {
+      return "Equality";
+    }
+  }
+
   public Player getPlayer() {
     return player;
   }
