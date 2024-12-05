@@ -16,6 +16,9 @@ public class App {
 
     Game game = new Game();
 
+    MainFrame app = new MainFrame();
+    app.setVisible(true);
+    
     game.startGame();
 
     System.out.println("Player's cards ");
@@ -64,8 +67,6 @@ public class App {
     System.out.println("------------------------");
     System.out.println(game.getWinner());
     
-    MainFrame app = new MainFrame();
-    app.setVisible(true);
   }
 
   private static void hand(List<Card> hand) {
