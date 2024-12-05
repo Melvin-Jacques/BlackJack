@@ -63,5 +63,9 @@ public class Player {
     public boolean isBust() {
       return calculScore() > 21;
     }
+
+    public boolean isNotBust() {
+      return calculScore() > 0 || calculScore() < 21;
+    }
   
 }

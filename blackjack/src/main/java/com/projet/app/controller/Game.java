@@ -45,6 +45,13 @@ public class Game {
     }
   }
 
+  public int getTokenLevel() {
+    if ( player.calculScore() > dealer.calculScore() ) {
+      player.token(getTokenLevel());
+    }
+    return getTokenLevel();
+  }
+
   public Player getPlayer() {
     return player;
   }
