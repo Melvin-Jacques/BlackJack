@@ -20,16 +20,8 @@ public class Player {
       return hand;
     }
 
-    public int token(int protefeuilIntitial) {
-      int protefeuilFinal = 0;
- 
-      if ( protefeuilIntitial < protefeuilFinal) {
-        protefeuilIntitial = protefeuilFinal - protefeuilIntitial;
-      }
-      else {
-        protefeuilIntitial = protefeuilFinal + protefeuilIntitial;
-      }
-      return protefeuilIntitial;
+    public int token(int portefeuil) {
+      return portefeuil;
     }
 
     public int calculScore() {
@@ -62,10 +54,6 @@ public class Player {
 
     public boolean isBust() {
       return calculScore() > 21;
-    }
-
-    public boolean isNotBust() {
-      return calculScore() > 0 || calculScore() < 21;
     }
   
 }

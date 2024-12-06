@@ -1,5 +1,6 @@
 package com.projet.app.controller;
 
+import com.projet.app.App;
 import com.projet.app.model.Deck;
 import com.projet.app.model.Player;
 
@@ -62,5 +63,9 @@ public class Game {
 
   public Deck getDeck() {
     return deck;
+  }
+
+  public int getMise() {
+    return App.mise;
   }
 }

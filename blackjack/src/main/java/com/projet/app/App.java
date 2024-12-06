@@ -10,14 +10,15 @@ import com.projet.app.view.MainFrame;
 public class App {
 
 
+  public static Scanner scanner = new Scanner(System.in);
+  public static Game game = new Game();
+  public static int mise;
+
   public static void main(String[] args) {
 
-    Scanner scanner = new Scanner(System.in);
-    
-    Game game = new Game();
 
     MainFrame app = new MainFrame();
-    app.setVisible(false);
+    app.setVisible(true);
     
     game.startGame();
 
@@ -25,7 +26,7 @@ public class App {
 
     System.out.println( "Combien voulez vous misez vous ? : ");
     
-    int mise = scanner.nextInt();
+    mise = scanner.nextInt();
 
     while ( mise > 0 ) {
 
@@ -79,8 +80,8 @@ public class App {
       System.out.println(game.getWinner());
 
       if ( game.getWinner() == "Player win" ) {
-        game.getPlayer().token(game.getPlayer().token(mise) * 2);
-        System.out.println( " Résultat de votre mise : "  + game.getPlayer().token(game.getPlayer().token(mise) * 2) );
+        game.getPlayer().token(game.getMise());
+        System.out.println( " Résultat de votre mise : "  + game.getPlayer().token(game.getMise()));
       }
 
       break;
