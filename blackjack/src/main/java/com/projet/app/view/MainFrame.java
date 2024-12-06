@@ -17,10 +17,11 @@ public class MainFrame extends JFrame {
 
     Game game = new Game();
     HomePanel homePanel = new HomePanel(cardLayout, mainPanel);
-    GamePanel gamePanel = new GamePanel(cardLayout, mainPanel, game);;
+    GamePanel gamePanel = new GamePanel(cardLayout, mainPanel, game);
+    BetPanel betPanel = new BetPanel(cardLayout, mainPanel, game);
     mainPanel.add(homePanel, "home");
     mainPanel.add(gamePanel, "game");
-    
+    mainPanel.add(betPanel, "bet");
 
     add(mainPanel);
     cardLayout.show(mainPanel, "home");
