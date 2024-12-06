@@ -2,13 +2,12 @@ package com.projet.app.view;
 
 import java.util.List;
 import com.projet.app.model.Card;
-import com.projet.app.model.Player;
+
 import com.projet.app.view.ActionPanel;
 import javax.swing.*;
 import java.awt.*;
 
 import com.projet.app.controller.Game;
-import com.projet.app.model.Player;
 
 public class GamePanel extends JPanel {
   private Game game;
@@ -19,8 +18,6 @@ public class GamePanel extends JPanel {
   
   public GamePanel(CardLayout layout, JPanel mainPanel, Game game) {
     this.game = game;
-
-    ActionPanel actionPanel = new ActionPanel(layout, this, mainPanel);
     setLayout(new BorderLayout());
 
     JPanel centerPanel = new JPanel();
@@ -53,12 +50,17 @@ public class GamePanel extends JPanel {
       playerPanel.add(playerCardsPanel);
       centerPanel.add(playerPanel);
 
+      ActionPanel actionPanel = new ActionPanel(
+                game,
+                this::updateGame
+        );
+        add(actionPanel, BorderLayout.SOUTH);
+
       game.startGame();
-      updateGameState();
-    add(actionPanel, BorderLayout.SOUTH);
+      updateGame();
   }
 
-  private void updateGameState() {
+  private void updateGame() {
     updateCards(dealerCardsPanel, game.getDealer().getHand());
 
     updateCards(playerCardsPanel, game.getPlayer().getHand());
@@ -69,9 +71,10 @@ public class GamePanel extends JPanel {
   }
 
   private void updateCards(JPanel panel, List<Card> hand) {
-      for (Card card : hand) {
-          panel.add(new CardManager(card.getColumn(), card.getRow()));
-      }
-  }
+    panel.removeAll();
+    for (Card card : hand) {
+        panel.add(new CardManager(card.getColumn(), card.getRow()));
+    } 
+}
 
 }
