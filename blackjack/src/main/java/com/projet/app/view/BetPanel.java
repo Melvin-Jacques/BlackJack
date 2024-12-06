@@ -16,7 +16,7 @@ public class BetPanel extends JPanel{
 
     JPanel betPanel = new JPanel();
 
-    JLabel betLabel = new JLabel("Combier voulez vous misez");
+    JLabel betLabel = new JLabel("Combien voulez vous misez");
     betPanel.add(betLabel);
     TextField numberField = new TextField();
     betPanel.add(numberField);

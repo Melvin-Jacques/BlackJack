@@ -1,6 +1,5 @@
 package com.projet.app.controller;
 
-import com.projet.app.App;
 import com.projet.app.model.Deck;
 import com.projet.app.model.Player;
 
@@ -8,7 +7,7 @@ public class Game {
   private Deck deck;
   private Player player;
   private Player dealer;
-  private Integer mise;
+  private int mise;
 
   public Game() {
     deck = new Deck();
@@ -17,7 +16,7 @@ public class Game {
   }
 
   public void startGame() {
-    player.setBalance(1000);
+    // player.setBalance(1000);
     player.addCard(deck.drawCard());
     dealer.addCard(deck.drawCard());
     player.addCard(deck.drawCard());
@@ -71,7 +70,7 @@ public class Game {
   public int getMise() {
     return mise;
   }
-  public void setMise(Integer mise) {
+  public void setMise(int mise) {
     player.setBalance(player.getBalance() - mise);
     this.mise = mise;
   }

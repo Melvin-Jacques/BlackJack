@@ -9,16 +9,17 @@ import com.projet.app.model.Player;
 import java.awt.*;
 
 public class ActionPanel extends JPanel {
-
+  public Game game;
   public ActionPanel(Game game,Runnable updateGame) {
       //je veux afficher 3 bouton en ligne separé par un petit espace pour ensuite mettre ce panel dans gamepanel
       //avec un flow layout
+       
+      this.game = game;
+
       setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
       JButton hit = new JButton("Hit");
       JButton stand = new JButton("Stand");
       JButton doubleDown = new JButton("Double");
-
-      // Game gameMise = new Game();
 
       hit.addActionListener(e -> {
         game.playerHit();
@@ -46,7 +47,7 @@ public class ActionPanel extends JPanel {
       gainNumber.setBackground(Color.darkGray);
 
       JLabel total = new JLabel("Total");
-      JLabel totalNumber = new JLabel(String.valueOf(value));
+      JLabel totalNumber = new JLabel(game.getMise() + "");
       totalNumber.setBackground(Color.darkGray);
 
       JLabel balance = new JLabel("Balance");

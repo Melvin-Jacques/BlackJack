@@ -6,7 +6,7 @@ import java.util.List;
 public class Player {
     private String name;
     private List<Card> hand;
-    private Integer balance;
+    private int balance = 2000;
 
     public Player(String name) {
       this.name = name;
@@ -24,7 +24,7 @@ public class Player {
     public int getBalance() {
       return balance;
     }
-    public void setBalance(Integer balance) {
+    public void setBalance(int balance) {
       this.balance = balance;
     }
 
@@ -38,11 +38,12 @@ public class Player {
           case "Jack":
           case "Queen":
           case "King":
-          score += 10;
-          break;
+            score += 10;
+            break;
           case "Ace":
-          score +=11;
-          break;
+            ace++;
+            score +=11;
+            break;
 
           default:
             score += Integer.parseInt(rank);
