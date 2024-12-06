@@ -8,9 +8,9 @@ import com.projet.app.model.Player;
 
 import java.awt.*;
 
-public class ActionPanel extends JComponent {
+public class ActionPanel extends JPanel {
 
-  public ActionPanel(CardLayout layout, GamePanel gamePanel, JPanel mainPanel) {
+  public ActionPanel(Game game,Runnable updateGameState) {
       //je veux afficher 3 bouton en ligne separé par un petit espace pour ensuite mettre ce panel dans gamepanel
       //avec un flow layout
       setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -18,22 +18,25 @@ public class ActionPanel extends JComponent {
       JButton stand = new JButton("Stand");
       JButton doubleDown = new JButton("Double");
 
-      Game gameMise = new Game();
+      // Game gameMise = new Game();
 
       hit.addActionListener(e -> {
-          //gamePanel.hit();
-          layout.show(mainPanel, "game");
-      });
+        game.playerHit();
+        updateGameState.run();
+        if (game.getPlayer().isBust()) {
+            JOptionPane.showMessageDialog(this, "Vous avez dépassé 21, vous avez perdu !");
+        }
+    });
       
       stand.addActionListener(e -> {
           //gamePanel.stand();
-          layout.show(mainPanel, "game");
+          // layout.show(mainPanel, "game");
       });
 
       doubleDown.addActionListener(e -> {
           //gamePanel.doubleDown();
-          System.out.println( gameMise.getMise() * 2);
-          layout.show(mainPanel, "game");
+          // System.out.println( gameMise.getMise() * 2);
+          // layout.show(mainPanel, "game");
       });
 
       JLabel gains = new JLabel("Gains");
