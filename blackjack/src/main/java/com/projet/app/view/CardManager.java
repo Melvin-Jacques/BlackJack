@@ -9,11 +9,11 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-public class ImageTest extends JPanel {
+public class CardManager extends JPanel {
   private BufferedImage image;
   private BufferedImage cards;
 
-  public ImageTest(int column, int row) {
+  public CardManager(int column, int row) {
     try {
       InputStream fichierImage = getClass().getResourceAsStream("../ressources/images/cards.jpg");
       if (fichierImage == null) {

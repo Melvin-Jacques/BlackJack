@@ -18,7 +18,7 @@ public class Deck {
   
       for( int row = 0; row < colors.length; row++) {
         for (int column = 0; column < ranks.length; column++) {
-          cards.add(new Card(ranks[column], colors[row], row, column));
+          cards.add(new Card(ranks[column], colors[row], row, column + 1));
         }
       }
       shuffle();
