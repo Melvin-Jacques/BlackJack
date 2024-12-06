@@ -11,8 +11,6 @@ import java.awt.*;
 public class ActionPanel extends JComponent {
 
   public ActionPanel(CardLayout layout, GamePanel gamePanel, JPanel mainPanel) {
-      //je veux afficher 3 bouton en ligne separé par un petit espace pour ensuite mettre ce panel dans gamepanel
-      //avec un flow layout
       setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
       JButton hit = new JButton("Hit");
       JButton stand = new JButton("Stand");
@@ -36,19 +34,17 @@ public class ActionPanel extends JComponent {
           layout.show(mainPanel, "game");
       });
 
-      JLabel gains = new JLabel("Gains");
+      JLabel gains = new JLabel("Gain");
       int value = 1000;
       JLabel gainNumber = new JLabel(String.valueOf(value));
       gainNumber.setBackground(Color.darkGray);
 
-      JLabel total = new JLabel("Total");
+      JLabel total = new JLabel("Mise");
       JLabel totalNumber = new JLabel(String.valueOf(value));
       totalNumber.setBackground(Color.darkGray);
 
       JLabel balance = new JLabel("Balance");
       JLabel balanceNumber = new JLabel(String.valueOf(value));
-    //   balanceNumber.setOpaque(true);
-    //   balanceNumber.setBackground(Color.GREEN);
 
       add(balance);
       add(balanceNumber);

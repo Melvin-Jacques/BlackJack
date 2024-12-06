@@ -8,6 +8,7 @@ public class Game {
   private Deck deck;
   private Player player;
   private Player dealer;
+  private Integer mise;
 
   public Game() {
     deck = new Deck();
@@ -16,6 +17,7 @@ public class Game {
   }
 
   public void startGame() {
+    player.setBalance(1000);
     player.addCard(deck.drawCard());
     dealer.addCard(deck.drawCard());
     player.addCard(deck.drawCard());
@@ -38,6 +40,7 @@ public class Game {
     } else if(dealer.isBust()) {
       return "Player win";
     } else if(player.calculScore() > dealer.calculScore()) {
+      player.setBalance(player.getBalance() + mise);
       return "Player win";
     } else if (dealer.calculScore() > player.calculScore()) {
       return "Dealer win";
@@ -48,7 +51,7 @@ public class Game {
 
   public int getTokenLevel() {
     if ( player.calculScore() > dealer.calculScore() ) {
-      player.token(getTokenLevel());
+      player.getBalance();
     }
     return getTokenLevel();
   }
@@ -66,6 +69,6 @@ public class Game {
   }
 
   public int getMise() {
-    return App.mise;
+    return mise;
   }
 }
