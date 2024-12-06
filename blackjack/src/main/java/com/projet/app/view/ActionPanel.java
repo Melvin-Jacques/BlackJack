@@ -1,9 +1,15 @@
 package com.projet.app.view;
 
 import javax.swing.*;
+
+import com.projet.app.App;
+import com.projet.app.controller.Game;
+import com.projet.app.model.Player;
+
 import java.awt.*;
 
 public class ActionPanel extends JComponent {
+
   public ActionPanel(CardLayout layout, GamePanel gamePanel, JPanel mainPanel) {
       //je veux afficher 3 bouton en ligne separé par un petit espace pour ensuite mettre ce panel dans gamepanel
       //avec un flow layout
@@ -11,6 +17,8 @@ public class ActionPanel extends JComponent {
       JButton hit = new JButton("Hit");
       JButton stand = new JButton("Stand");
       JButton doubleDown = new JButton("Double");
+
+      Game gameMise = new Game();
 
       hit.addActionListener(e -> {
           //gamePanel.hit();
@@ -24,6 +32,7 @@ public class ActionPanel extends JComponent {
 
       doubleDown.addActionListener(e -> {
           //gamePanel.doubleDown();
+          System.out.println( gameMise.getMise() * 2);
           layout.show(mainPanel, "game");
       });
 
