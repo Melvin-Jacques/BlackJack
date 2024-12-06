@@ -22,7 +22,7 @@ public class HomePanel extends JPanel {
     home.setLayout(new BoxLayout(home, BoxLayout.Y_AXIS));
 
     JButton gameButton = new JButton("Jouer");
-    gameButton.addActionListener(e -> layout.show(mainPanel, "game"));
+    gameButton.addActionListener(e -> layout.show(mainPanel, "bet"));
 
     gameButton.setAlignmentX(CENTER_ALIGNMENT);
 

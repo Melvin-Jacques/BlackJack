@@ -68,23 +68,10 @@ public class GamePanel extends JPanel {
     dealerScoreLabel.setText("Score du croupier : " + game.getDealer().calculScore());
   }
 
-private void updateCards(JPanel panel, List<Card> hand) {
-    for (Card card : hand) {
-        panel.add(new CardManager(card.getColumn(), card.getRow()));
-    }
-}
-
-public void playerBet(JPanel panel) {
-  JLabel betLabel = new JLabel("Combier voulez vous misez");
-  add(betLabel);
-  TextField numberField = new TextField();
-  add(numberField);
-  JLabel balanceLabel = new JLabel("Balance : " + game.getPlayer().getBalance());
-  add(balanceLabel);
-  JButton bet = new JButton("Miser");
-    Integer valueBet = Integer.parseInt(numberField.getText());
-
-  // return valueBet;
-}
+  private void updateCards(JPanel panel, List<Card> hand) {
+      for (Card card : hand) {
+          panel.add(new CardManager(card.getColumn(), card.getRow()));
+      }
+  }
 
 }

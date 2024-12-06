@@ -71,4 +71,8 @@ public class Game {
   public int getMise() {
     return mise;
   }
+  public void setMise(Integer mise) {
+    player.setBalance(player.getBalance() - mise);
+    this.mise = mise;
+  }
 }
